@@ -21,10 +21,10 @@ source ~/.bashrc
 conda activate /u/tbeleyur/conda-envs/fresh/
 
 # and now run the file 
-cd /u/tbeleyur/australian_frogs/
+cd /u/tbeleyur/ausfrogs_pydatemm/
 # setup the parameter files 
 python preparing_parametersets_esfpond.py
 # run one of the parameter files
-python -m pydatemm -paramfile ausfrogs/ausfrogs_$SLURM_ARRAY_TASK_ID.yaml
+python -m pydatemm -paramfile ausfrogs_param_n_output/ausfrogs_$SLURM_ARRAY_TASK_ID.yaml
 
 
