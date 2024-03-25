@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --time 00:10:00
 #SBATCH --mem 10G
-#SBATCH --array=0-9
+#SBATCH --array=0-24
 #SBATCH -o origxyz_%a.out
 #SBATCH -e origxyz_%a.err
 #SBATCH --job-name=ausfrogs

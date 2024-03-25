@@ -44,7 +44,7 @@ micxy.to_csv(pseudo_3d_filename)
 common_parameters = {}
 common_parameters['audiopath'] = 'olong_multichfile.wav'
 common_parameters['arraygeompath'] = pseudo_3d_filename
-common_parameters['dest_folder'] = 'ausfrogs'
+common_parameters['dest_folder'] = 'ausfrogs_param_n_output'
 common_parameters['K'] = 3
 common_parameters['maxloopres'] = 1e-3
 common_parameters['min_peak_dist'] = 0.5e-3 # s
@@ -58,7 +58,7 @@ array_geom = pd.read_csv(common_parameters['arraygeompath']).loc[:,'x':'z'].to_n
 step_size = 0.05
 window_size = 0.120
 common_parameters['window_size'] = window_size
-time_starts = np.arange(60, 65, step_size)
+time_starts = np.arange(60, 90, step_size)
 
 if not os.path.exists(common_parameters['dest_folder']):
     os.mkdir(common_parameters['dest_folder'])
@@ -66,7 +66,7 @@ if not os.path.exists(common_parameters['dest_folder']):
 # incoporate the time windows into the parameter file
 relevant_time_windows = np.around(time_starts, 3)
 # split the time_windows according to the total number of paramsets to be generated
-split_timepoints = np.array_split(relevant_time_windows, 10)
+split_timepoints = np.array_split(relevant_time_windows, 25)
 #%%
 for i, each in enumerate(split_timepoints):
     common_parameters['start_time'] = str(each.tolist())[1:-1]
